@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-warborne-darker text-gray-100 font-military overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 20% 30%, rgba(255, 107, 53, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 70%, rgba(211, 47, 47, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(10, 10, 10, 1) 0px, transparent 100%);
+  }
+  
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-warborne-dark;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-warborne-orange rounded;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-warborne-red;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-warborne-orange to-warborne-red text-white font-bold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-warborne-orange;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-warborne-orange text-warborne-orange font-bold uppercase tracking-wider rounded-lg hover:bg-warborne-orange hover:text-white transition-all duration-300;
+  }
+  
+  .card-warborne {
+    @apply bg-warborne-gray border border-warborne-orange/30 rounded-lg p-6 shadow-xl hover:shadow-2xl hover:border-warborne-orange transition-all duration-300 backdrop-blur-sm;
+  }
+  
+  .text-glow {
+    @apply text-warborne-orange;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5), 0 0 20px rgba(255, 107, 53, 0.3);
+  }
+  
+  .section-title {
+    @apply text-5xl md:text-7xl font-display font-black uppercase tracking-wider text-glow mb-8;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-size: 50px 50px;
+  }
+  
+  /* Animation delays */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+}
+
+/* Animación personalizada para partículas */
+@keyframes drift {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+.particle {
+  animation: drift linear infinite;
+}
+
+/* Efecto de parpadeo para simular fuego lejano */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Animación de pulsación para efectos de guerra */
+@keyframes war-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
