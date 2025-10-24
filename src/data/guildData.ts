@@ -5,12 +5,15 @@
  * Después de hacer cambios, ejecuta: npm run deploy
  */
 
+import avatar01 from '../assets/avatar01.png'
+import avatar02 from '../assets/avatar02.png'
+
 // ============================================
 // 📊 ESTADÍSTICAS GENERALES DEL GREMIO
 // ============================================
 export const guildStats = {
   // Ranking en la Facción Sirio
-  ranking: 1,                    // Tu posición en el ranking
+  ranking: 10,                    // Tu posición en el ranking
   rankingBadge: "Top Guild",     // Texto del badge
   
   // Bajas enemigas
@@ -24,7 +27,7 @@ export const guildStats = {
   },
   
   // Racha de victorias
-  winStreak: 15,                 // Victorias consecutivas actuales
+  winStreak: 3,                 // Victorias consecutivas actuales
   streakStatus: "Imparable"      // Estado de la racha
 }
 
@@ -34,7 +37,7 @@ export const guildStats = {
 export const memberStats = {
   total: 50,           // Total de miembros en el gremio
   online: 23,          // Miembros online ahora
-  totalVictories: 1500 // Victorias totales del gremio
+  totalVictories: 3 // Victorias totales del gremio
 }
 
 // ============================================
@@ -44,7 +47,7 @@ export const heroStats = {
   members: memberStats.total,
   membersOnline: memberStats.online,
   victories: `${Math.floor(memberStats.totalVictories / 100) * 100}+`, // Se redondea automáticamente
-  territories: 15,
+  territories: 3,
   ranking: guildStats.ranking,
   territoriesControl: "100%",
   victoriesThisWeek: 89
@@ -60,9 +63,29 @@ export const featuredMembers = [
     guild: "sunthers",
     role: "DPS",                    // DPS, TANK, SUPPORT
     avatar: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=400&h=400&fit=crop",
-    level: 45,
+    level: 36,
     kills: 1247,
-    victories: 89
+    assists: 89
+  },
+  {
+    nick: "By_Ayone",
+    faction: "Morada",
+    guild: "sunthers",
+    role: "OffTank",
+    avatar: avatar01,
+    level: 36,
+    kills: 126,
+    assists: 1020
+  },
+  {
+    nick:   "Ready" ,
+    faction: "Mortaja",
+    guild: "Sunthers",
+    role: "DPS",
+    avatar: avatar02,
+    level: 36,
+    kills: 114,
+    assists: 873
   },
   // Agrega más miembros aquí copiando el formato:
   /*
@@ -74,7 +97,7 @@ export const featuredMembers = [
     avatar: "URL_DE_IMAGEN",
     level: 40,
     kills: 500,
-    victories: 50
+    assists: 50
   },
   */
 ]
