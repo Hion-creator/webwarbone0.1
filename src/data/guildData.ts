@@ -9,6 +9,7 @@ import avatar01 from '../assets/avatar01.png'
 import avatar02 from '../assets/avatar02.png'
 import avatar03 from  '../assets/avatar03.png'
 import avatar04 from '../assets/avatar04.png'
+import avatar05 from '../assets/avatar05.png'
 
 // ============================================
 // 📊 ESTADÍSTICAS GENERALES DEL GREMIO
@@ -64,10 +65,11 @@ export const featuredMembers = [
     faction: "Mortaja",
     guild: "sunthers",
     role: "DPS",                    // DPS, TANK, SUPPORT
-    avatar: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=400&h=400&fit=crop",
+    avatar: avatar05,
     level: 36,
     kills: 1247,
-    assists: 89
+    assists: 89,
+    isWebmaster: true  // 💻 Webmaster
   },
   {
     nick: "By_Ayone",
@@ -108,7 +110,7 @@ export const featuredMembers = [
     level: 36,
     kills: 12,
     assists: 424,
-    isLeader: true  // 👑 Líder del gremio
+    isLeader: true,  // 👑 Líder del gremio
   },
   // Agrega más miembros aquí copiando el formato:
   /*

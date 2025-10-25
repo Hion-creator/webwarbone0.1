@@ -10,6 +10,7 @@ interface Member {
   kills: number
   assists: number
   isLeader?: boolean  // 👑 Indica si es el líder del gremio
+  isWebmaster?: boolean  // 💻 Indica si es el webmaster
 }
 
 interface MemberCardProps {
@@ -47,6 +48,20 @@ const MemberCard = ({ member }: MemberCardProps) => {
   return (
     <>
       <div className="card-warborne group hover:scale-105 transform transition-all duration-300">
+        {/* Corona de Líder - FUERA de la foto, arriba de la tarjeta */}
+        {member.isLeader && (
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-20 animate-pulse-slow">
+            <div className="relative">
+              {/* Resplandor dorado */}
+              <div className="absolute inset-0 bg-amber-400 blur-2xl opacity-60 animate-pulse-slow"></div>
+              {/* Corona */}
+              <div className="relative text-5xl drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 12px rgba(251, 191, 36, 0.9))' }}>
+                👑
+              </div>
+            </div>
+          </div>
+        )}
+        
         {/* Avatar */}
         <div className="relative mb-4 overflow-hidden rounded-lg h-48">
           <img 
@@ -56,29 +71,22 @@ const MemberCard = ({ member }: MemberCardProps) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-warborne-dark via-transparent to-transparent"></div>
           
-          {/* Corona de Líder - Esquina Superior Izquierda */}
-          {member.isLeader && (
-            <div className="absolute top-2 left-2 z-10 animate-pulse-slow">
-              <div className="relative">
-                {/* Resplandor dorado */}
-                <div className="absolute inset-0 bg-amber-400 blur-xl opacity-50 animate-pulse-slow"></div>
-                {/* Corona */}
-                <div className="relative text-4xl drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.8))' }}>
-                  👑
-                </div>
-              </div>
-            </div>
-          )}
-          
           {/* Level Badge */}
           <div className="absolute top-4 right-4 bg-warborne-orange text-white px-3 py-1 rounded-full font-bold">
             Lvl {member.level}
           </div>
 
           {/* Role Badge */}
-          <div className={`absolute top-4 ${member.isLeader ? 'left-16' : 'left-4'} px-3 py-1 rounded-full font-bold border ${getRoleBg(member.role)}`}>
+          <div className={`absolute top-4 left-4 px-3 py-1 rounded-full font-bold border ${getRoleBg(member.role)}`}>
             <span className={getRoleColor(member.role)}>{member.role}</span>
           </div>
+
+          {/* Badge de Webmaster */}
+          {member.isWebmaster && (
+            <div className="absolute bottom-4 left-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-3 py-1 rounded-full font-bold text-xs uppercase tracking-wider border-2 border-purple-400 shadow-lg animate-pulse-slow">
+              💻 Webmaster
+            </div>
+          )}
         </div>
 
         {/* Info */}
