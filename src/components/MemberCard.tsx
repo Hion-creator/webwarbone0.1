@@ -9,6 +9,7 @@ interface Member {
   level: number
   kills: number
   assists: number
+  isLeader?: boolean  // 👑 Indica si es el líder del gremio
 }
 
 interface MemberCardProps {
@@ -55,13 +56,27 @@ const MemberCard = ({ member }: MemberCardProps) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-warborne-dark via-transparent to-transparent"></div>
           
+          {/* Corona de Líder - Esquina Superior Izquierda */}
+          {member.isLeader && (
+            <div className="absolute top-2 left-2 z-10 animate-pulse-slow">
+              <div className="relative">
+                {/* Resplandor dorado */}
+                <div className="absolute inset-0 bg-amber-400 blur-xl opacity-50 animate-pulse-slow"></div>
+                {/* Corona */}
+                <div className="relative text-4xl drop-shadow-2xl" style={{ filter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.8))' }}>
+                  👑
+                </div>
+              </div>
+            </div>
+          )}
+          
           {/* Level Badge */}
           <div className="absolute top-4 right-4 bg-warborne-orange text-white px-3 py-1 rounded-full font-bold">
             Lvl {member.level}
           </div>
 
           {/* Role Badge */}
-          <div className={`absolute top-4 left-4 px-3 py-1 rounded-full font-bold border ${getRoleBg(member.role)}`}>
+          <div className={`absolute top-4 ${member.isLeader ? 'left-16' : 'left-4'} px-3 py-1 rounded-full font-bold border ${getRoleBg(member.role)}`}>
             <span className={getRoleColor(member.role)}>{member.role}</span>
           </div>
         </div>
@@ -131,7 +146,20 @@ const MemberCard = ({ member }: MemberCardProps) => {
               
               {/* Info overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-warborne-dark via-warborne-dark/90 to-transparent p-6">
-                <h2 className="font-display font-bold text-4xl text-glow mb-3">{member.nick}</h2>
+                <div className="flex items-center gap-3 mb-3">
+                  {/* Corona de líder si aplica */}
+                  {member.isLeader && (
+                    <div className="text-4xl animate-pulse-slow" style={{ filter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.8))' }}>
+                      👑
+                    </div>
+                  )}
+                  <h2 className="font-display font-bold text-4xl text-glow">{member.nick}</h2>
+                  {member.isLeader && (
+                    <span className="text-amber-400 font-semibold text-sm uppercase tracking-wider bg-amber-400/20 px-3 py-1 rounded-full border border-amber-400/40">
+                      Líder
+                    </span>
+                  )}
+                </div>
                 
                 {/* Info básica */}
                 <div className="flex items-center gap-4 text-sm mb-4">

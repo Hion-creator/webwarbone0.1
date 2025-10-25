@@ -7,12 +7,14 @@
 
 import avatar01 from '../assets/avatar01.png'
 import avatar02 from '../assets/avatar02.png'
+import avatar03 from  '../assets/avatar03.png'
+import avatar04 from '../assets/avatar04.png'
 
 // ============================================
 // 📊 ESTADÍSTICAS GENERALES DEL GREMIO
 // ============================================
 export const guildStats = {
-  // Ranking en la Facción Sirio
+  // Ranking en la Facción Mortaja
   ranking: 10,                    // Tu posición en el ranking
   rankingBadge: "Top Guild",     // Texto del badge
   
@@ -59,7 +61,7 @@ export const heroStats = {
 export const featuredMembers = [
   {
     nick: "Hion",
-    faction: "Sirio",
+    faction: "Mortaja",
     guild: "sunthers",
     role: "DPS",                    // DPS, TANK, SUPPORT
     avatar: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=400&h=400&fit=crop",
@@ -69,7 +71,7 @@ export const featuredMembers = [
   },
   {
     nick: "By_Ayone",
-    faction: "Morada",
+    faction: "Mortaja",
     guild: "sunthers",
     role: "OffTank",
     avatar: avatar01,
@@ -78,7 +80,7 @@ export const featuredMembers = [
     assists: 1020
   },
   {
-    nick:   "Ready" ,
+    nick:   "xSaint" ,
     faction: "Mortaja",
     guild: "Sunthers",
     role: "DPS",
@@ -86,6 +88,27 @@ export const featuredMembers = [
     level: 36,
     kills: 114,
     assists: 873
+  },
+  {
+    nick:   "PandaBelikin" ,
+    faction: "Mortaja",
+    guild: "sunthers",
+    role: "Healer",
+    avatar: avatar03,
+    level: 36,
+    kills:3,
+    assists: 341
+  },
+  {
+    nick: "Lnanoz",
+    faction: "Mortaja",
+    guild: "Sunthers",
+    role: "TANK",
+    avatar: avatar04,
+    level: 36,
+    kills: 12,
+    assists: 424,
+    isLeader: true  // 👑 Líder del gremio
   },
   // Agrega más miembros aquí copiando el formato:
   /*
@@ -198,7 +221,7 @@ export const contactInfo = {
 // ============================================
 export const config = {
   guildName: "SUNTHERS",
-  faction: "Sirio",
+  faction: "Mortaja",
   motto: "Boundless • Relentless • Fearless",
   description: "Somos los guerreros más temidos de Warborne. Montamos behemoths, comandamos máquinas de guerra y conquistamos cada territorio que pisamos.",
   year: new Date().getFullYear()

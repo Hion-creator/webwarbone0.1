@@ -49,6 +49,24 @@
   .section-title {
     @apply text-5xl md:text-7xl font-display font-black uppercase tracking-wider text-glow mb-8;
   }
+
+  /* Animaciones 3D para el estandarte */
+  .banner-3d {
+    filter: drop-shadow(0 10px 30px rgba(123, 44, 191, 0.5)) 
+            drop-shadow(0 0 20px rgba(139, 92, 246, 0.4));
+    animation: banner-depth 4s ease-in-out infinite;
+  }
+
+  @keyframes banner-depth {
+    0%, 100% {
+      filter: drop-shadow(0 10px 30px rgba(123, 44, 191, 0.5)) 
+              drop-shadow(0 0 20px rgba(139, 92, 246, 0.4));
+    }
+    50% {
+      filter: drop-shadow(0 15px 40px rgba(123, 44, 191, 0.7)) 
+              drop-shadow(0 0 30px rgba(139, 92, 246, 0.6));
+    }
+  }
 }
 
 @layer utilities {

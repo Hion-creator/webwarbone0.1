@@ -3,6 +3,7 @@ import MemberCard from './components/MemberCard'
 import Navigation from './components/Navigation'
 import ParticleBackground from './components/ParticleBackground'
 import StatsSection from './components/StatsSection'
+import FactionFlag from './components/FactionFlag'
 import { featuredMembers, conquests, conquestStats, recruitmentRequirements, raidSchedule, contactInfo, config, memberStats } from './data/guildData'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="relative min-h-screen">
       <ParticleBackground />
       <Navigation />
+      <FactionFlag />
       
       {/* Sección Inicio */}
       <Hero />
