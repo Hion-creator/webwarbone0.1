@@ -20,29 +20,21 @@ interface MemberCardProps {
 const MemberCard = ({ member }: MemberCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const getRoleColor = (role: string) => {
-    switch (role.toUpperCase()) {
-      case 'DPS':
-        return 'text-red-500'
-      case 'TANK':
-        return 'text-blue-500'
-      case 'SUPPORT':
-        return 'text-green-500'
-      default:
-        return 'text-warborne-orange'
-    }
+    const roleUpper = role.toUpperCase()
+    if (roleUpper === 'DPS') return 'text-red-500'
+    if (roleUpper === 'TANK') return 'text-blue-500'
+    if (roleUpper.includes('HEALER') || roleUpper === 'SUPPORT') return 'text-green-500'
+    if (roleUpper.includes('OFFTANK')) return 'text-cyan-500'
+    return 'text-warborne-orange'
   }
 
   const getRoleBg = (role: string) => {
-    switch (role.toUpperCase()) {
-      case 'DPS':
-        return 'bg-red-500/20 border-red-500'
-      case 'TANK':
-        return 'bg-blue-500/20 border-blue-500'
-      case 'SUPPORT':
-        return 'bg-green-500/20 border-green-500'
-      default:
-        return 'bg-warborne-orange/20 border-warborne-orange'
-    }
+    const roleUpper = role.toUpperCase()
+    if (roleUpper === 'DPS') return 'bg-red-500/20 border-red-500'
+    if (roleUpper === 'TANK') return 'bg-blue-500/20 border-blue-500'
+    if (roleUpper.includes('HEALER') || roleUpper === 'SUPPORT') return 'bg-green-500/20 border-green-500'
+    if (roleUpper.includes('OFFTANK')) return 'bg-cyan-500/20 border-cyan-500'
+    return 'bg-warborne-orange/20 border-warborne-orange'
   }
 
   return (
