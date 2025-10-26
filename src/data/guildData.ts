@@ -10,6 +10,9 @@ import avatar02 from '../assets/avatar02.png'
 import avatar03 from  '../assets/avatar03.png'
 import avatar04 from '../assets/avatar04.png'
 import avatar05 from '../assets/avatar05.png'
+import avatar06 from '../assets/avatar06.png'
+import avatar07 from '../assets/avatar07.png'
+import avatar08 from '../assets/avatar08.png'
 
 // ============================================
 // 📊 ESTADÍSTICAS GENERALES DEL GREMIO
@@ -66,10 +69,10 @@ export const featuredMembers = [
     guild: "sunthers",
     role: "DPS",                    // DPS, TANK, SUPPORT
     avatar: avatar05,
-    level: 36,
+    level: 38,
     kills: 1247,
     assists: 89,
-    isWebmaster: true  // 💻 Webmaster
+    isWebmaster: true   // 💻 Webmaster
   },
   {
     nick: "By_Ayone",
@@ -77,7 +80,7 @@ export const featuredMembers = [
     guild: "sunthers",
     role: "OffTank",
     avatar: avatar01,
-    level: 36,
+    level: 38,
     kills: 126,
     assists: 1020
   },
@@ -87,7 +90,7 @@ export const featuredMembers = [
     guild: "Sunthers",
     role: "DPS",
     avatar: avatar02,
-    level: 36,
+    level: 38,
     kills: 114,
     assists: 873
   },
@@ -97,7 +100,7 @@ export const featuredMembers = [
     guild: "sunthers",
     role: "Healer",
     avatar: avatar03,
-    level: 36,
+    level: 38,
     kills:3,
     assists: 341
   },
@@ -107,10 +110,40 @@ export const featuredMembers = [
     guild: "Sunthers",
     role: "TANK",
     avatar: avatar04,
-    level: 36,
+    level: 38,
     kills: 12,
     assists: 424,
-    isLeader: true,  // 👑 Líder del gremio
+    isLeader: true,     // 👑 Líder del gremio
+  },
+  {
+    nick: "irinya",
+    faction: "Mortaja",
+    guild: "sunthers",
+    role: "Healer",
+    avatar: avatar06,
+    level: 38,
+    kills: 2,
+    assists: 55
+  },
+  {
+    nick: "morfeO",
+    faction: "Mortaja",
+    guild: "sunthers",
+    role: "Healer y DPS",
+    avatar: avatar07,
+    level: 38,
+    kills: 20,
+    assists: 560
+  },
+  {
+    nick: "Dcumana",
+    faction: "MORADA XD",
+    guild: "sunthers",
+    role: "HACHAZ",
+    avatar: avatar08,
+    level: 38,
+    kills: 37,
+    assists: 240
   },
   // Agrega más miembros aquí copiando el formato:
   /*
