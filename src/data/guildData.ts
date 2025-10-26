@@ -70,8 +70,8 @@ export const featuredMembers = [
     role: "DPS",                    // DPS, TANK, SUPPORT
     avatar: avatar05,
     level: 38,
-    kills: 1247,
-    assists: 89,
+    kills: 72,
+    assists: 363,
     isWebmaster: true   // 💻 Webmaster
   },
   {
